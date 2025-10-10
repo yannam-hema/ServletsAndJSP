@@ -12,6 +12,7 @@ private int accno;
 private long phone;
 private int balance;
 private String Password;
+private String npassword;
 private Connection con;
 private PreparedStatement ps;
 private ResultSet rs;
@@ -52,7 +53,12 @@ public int getBalance() {
 public void setBalance(int balance) {
 	this.balance = balance;
 }
-
+public String getNpassword() {
+	return npassword;
+}
+public void setNpassword(String npassword) {
+	this.npassword = npassword;
+}
 
 public Model() {
 try {
@@ -96,6 +102,10 @@ public boolean userLogin() {
 		
 		rs = ps.executeQuery();
 		if(rs.next()) {
+			accno = rs.getInt("accno");
+            name = rs.getString("uname");
+            balance = rs.getInt("balance");
+            phone = rs.getLong("phone");
 			return true;
 		}
 		return false;
@@ -106,16 +116,35 @@ public boolean userLogin() {
 	}
 }
 
+public boolean fetchBalance() {
+    try {
+        String query = "SELECT balance FROM BankApp WHERE accno = ?";
+        ps = con.prepareStatement(query);
+        ps.setInt(1, accno);
+        rs = ps.executeQuery();
+
+        if (rs.next()==true) {
+            balance = rs.getInt("balance"); 
+            return true;
+        }
+        return false;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+
 public boolean emailUpdate() {
     try {
         String sql = "UPDATE BankApp SET uemail = ? WHERE uname = ?";
         ps = con.prepareStatement(sql);
-        ps.setString(1, email); // new email value
-        ps.setString(2, name);  // match user by name
+        ps.setString(1, email); 
+        ps.setString(2, name);  
         
         int res = ps.executeUpdate();
         if (res > 0) {
-            return true; // update successful
+            return true; 
         }
         return false;
     } catch (Exception e) {
@@ -139,6 +168,25 @@ public boolean deleteUser() {
 	return false;
 }
 	
+}
+public boolean changePassword() {
+	try {
+	String sql="update bankapp set password=? where accno=? and password=?";
+	ps=con.prepareStatement(sql);
+	ps.setString(1, npassword);
+	ps.setInt(2, accno);
+	ps.setString(3, Password);
+	int x = ps.executeUpdate();
+	if(x>0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+	}catch (Exception e) {
+		e.printStackTrace();
+		return false;
+	}
 }
 
 }
