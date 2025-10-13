@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>change Password</title>
+<link rel="stylesheet" href="Login.css">
 </head>
 <body>
-<h3>Change the password</h3>
-<form action="ChangePassword">
+<h1 id="heading">Change the password</h1>
+<div class="main-container">
+<form  class="form-container" action="ChangePassword">
 <label>Enter the old password</label>
 <input type="password" name="opwd"><br><br>
 
@@ -16,7 +18,8 @@
 <label>Confirm the new  password</label>
 <input type="password" name="cnpwd"><br><br>
 
-<input type=submit value="change password">
+<input id="btn" type=submit value="change password">
 </form>
+</div>
 </body>
 </html>

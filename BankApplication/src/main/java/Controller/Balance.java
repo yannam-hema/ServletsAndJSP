@@ -13,10 +13,12 @@ public class Balance extends HttpServlet {
     private HttpSession session;
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         session = req.getSession();
-        int accno = (int) session.getAttribute("accno");
-        
+        Object accnoObj = session.getAttribute("accno");
+        int accno = (int) accnoObj;
+        System.out.println("Account number: " + accno);
+
         Model m = new Model();
         m.setAccno(accno);
 

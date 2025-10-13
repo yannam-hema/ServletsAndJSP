@@ -103,9 +103,7 @@ public boolean userLogin() {
 		rs = ps.executeQuery();
 		if(rs.next()) {
 			accno = rs.getInt("accno");
-            name = rs.getString("uname");
-            balance = rs.getInt("balance");
-            phone = rs.getLong("phone");
+			System.out.println(accno);
 			return true;
 		}
 		return false;
@@ -117,22 +115,19 @@ public boolean userLogin() {
 }
 
 public boolean fetchBalance() {
-    try {
-        String query = "SELECT balance FROM BankApp WHERE accno = ?";
-        ps = con.prepareStatement(query);
-        ps.setInt(1, accno);
-        rs = ps.executeQuery();
-
-        if (rs.next()==true) {
-            balance = rs.getInt("balance"); 
-            return true;
-        }
-        return false;
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        return false;
-    }
+	try {
+		String query = "select balance from bankapp where accno=?";
+		ps = con.prepareStatement(query);
+		ps.setInt(1, accno);
+		rs = ps.executeQuery();
+		while (rs.next() == true) {
+			balance = rs.getInt("balance");
+			System.out.println(balance);
+		}
+		return true;
+	} catch (Exception e) {
+		return false;
+	}
 }
 
 public boolean emailUpdate() {
@@ -188,5 +183,19 @@ public boolean changePassword() {
 		return false;
 	}
 }
+public boolean updateBalance(int accno, int newBalance) {
+    try {
+        String sql = "UPDATE bankapp SET balance = ? WHERE accno = ?";
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, newBalance);
+        ps.setInt(2, accno);
+        int result = ps.executeUpdate();
+        return result > 0; 
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+
 
 }

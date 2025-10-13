@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Check Balance</title>
+<link rel="stylesheet" href="RegistrationSuccess.css">
 </head>
 <body>
-<h3>Balance fetched Successfully</h3>
-<h3><%
+<h1 id="heading">Balance fetched Successfully</h1>
+<h2 id="heading"><%
 out.println(session.getAttribute("balance"));
-%></h3>
+%></h2>
 </body>
 </html>
