@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/hibernate-commons-annotations-4.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/avro-1.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/hibernate-core-4.2.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/jms-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/jsr250-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/lucene-core-3.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/paranamer-2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/eclipse-workspace/Hibernate Jars/snappy-java-1.0.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yanna/Downloads/mysql-connector-j-8.0.33.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
