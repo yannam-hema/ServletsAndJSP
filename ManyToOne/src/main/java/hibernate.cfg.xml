@@ -2,19 +2,26 @@
 <!DOCTYPE hibernate-configuration PUBLIC 
    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
   <session-factory>
+
+    <!-- Database connection settings -->
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gqt_hib</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">Yannam@300323</property>
+
+    <!-- Hibernate settings -->
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.connection.pool_size">3</property>
-    
-    <mapping class="HibernateOneToOne.Employee"/>
-    <mapping class="HibernateOneToOne.Address"/>
+
+    <!-- Entity Mappings -->
+    <mapping class="HibernateManyToOne.Book"/>
+    <mapping class="HibernateManyToOne.Publisher"/>
+
   </session-factory>
 </hibernate-configuration>

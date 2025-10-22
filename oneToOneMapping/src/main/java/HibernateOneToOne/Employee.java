@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Employee", schema="gqt_hib")
+@Table(name="employee", schema="gqt_hib")
 public class Employee {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +19,14 @@ private int id;
 @Column
 private String name;
 @OneToOne(cascade = CascadeType.ALL)
-@JoinColumn(name="aid" , referencedColumnName = "aid")
+@JoinColumn(name="add_id" , referencedColumnName = "aid")
 Address aid;
+public Address getAid() {
+	return aid;
+}
+public void setAid(Address aid) {
+	this.aid = aid;
+}
 public int getId() {
 	return id;
 }

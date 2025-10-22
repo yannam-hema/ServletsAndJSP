@@ -19,8 +19,7 @@ String addline;
 String city;
 @Column
 String state;
-@Column
-String country;
+
 @Column
 int pincode;
 public int getAid() {
@@ -47,12 +46,7 @@ public String getState() {
 public void setState(String state) {
 	this.state = state;
 }
-public String getCountry() {
-	return country;
-}
-public void setCountry(String country) {
-	this.country = country;
-}
+
 public int getPincode() {
 	return pincode;
 }
