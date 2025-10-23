@@ -32,16 +32,16 @@ public class MainApp {
 //		session.save(s);
 //		beginTransaction.commit();
 //		session.close();
-		
-		Transaction beginTransaction = session.beginTransaction();
-		Query query = session.createQuery("From Student");
-		List list = query.list();
-		Iterator iterator = list.iterator();
-		while (iterator.hasNext()) {
-			Student s1 = (Student) iterator.next();
-			System.out.println(s1.getId()+"--------"+s1.getName());
-			System.out.println("==============");
-		}
+//		
+//		Transaction beginTransaction = session.beginTransaction();
+//		Query query = session.createQuery("From Student");
+//		List list = query.list();
+//		Iterator iterator = list.iterator();
+//		while (iterator.hasNext()) {
+//			Student s1 = (Student) iterator.next();
+//			System.out.println(s1.getId()+"--------"+s1.getName());
+//			System.out.println("==============");
+//		}
 		
 		
 //		Student s1 = (Student)session.get(Student.class, 1);
