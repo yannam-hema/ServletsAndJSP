@@ -42,15 +42,21 @@ public class HibernateManager {
 	    public boolean  readData(UserDetails u) {
 	    	try {
 	    	Transaction beginTransaction = session.beginTransaction();
-			Query query = session.createQuery("From UserDetails");
-			List list = query.list();
-			Iterator iterator = list.iterator();
-			while (iterator.hasNext()) {
-				UserDetails ud1 = (UserDetails) iterator.next();
-				System.out.println(ud1.getId()+"->"+ud1.getUsername());
-				System.out.println("...............");
-			}
-			return true;
+	    	// HQL query to find user by email and password
+	    	Query query = session.createQuery("FROM UserDetails WHERE email = :email AND password = :password");
+	    	query.setParameter("email", u.getEmail());
+	    	query.setParameter("password", u.getPassword());
+	    	List<UserDetails> list = query.list();
+
+	    	// Check if matched record found
+	    	if (!list.isEmpty()) {
+	    	    UserDetails ud1 = list.get(0);
+	    	    System.out.println("Login successful for: " + ud1.getUsername());
+	    	    return true;
+	    	} else {
+	    	    System.out.println("Invalid email or password!");
+	    	    return false;
+	    	}
 	    	}catch (Exception e) {
 				return false;
 			}

@@ -13,7 +13,11 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ShowData extends HttpServlet {
 @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	String email=req.getParameter("email");
+	String password=req.getParameter("pwd");
 	UserDetails ud = new UserDetails();
+	ud.setEmail(email);
+	ud.setPassword(password);
 	HibernateManager hbm = new HibernateManager();
 	boolean b = hbm.readData(ud);
 	if(b) {
