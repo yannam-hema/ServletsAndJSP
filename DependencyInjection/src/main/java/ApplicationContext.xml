@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="SpringCode2.Address">
+        <property name="addline">
+            <value>#24 4th main 2nd Cross</value>
+        </property>
+        <property name="city">
+            <value>Bengaluru</value>
+        </property>
+        <property name="state">
+            <value>Karnataka</value>
+        </property>
+    </bean>
+
+    <bean id="emp" class="SpringCode2.Employee">
+        <property name="id">
+            <value>1</value>
+        </property>
+        <property name="name">
+            <value>Hema</value>
+        </property>
+        <property name="address" ref="address"/>
+    </bean>
+</beans>
